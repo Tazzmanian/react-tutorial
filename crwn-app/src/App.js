@@ -1,12 +1,12 @@
 import React from 'react';
-import { Route, Routes, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Header } from './components/header/header.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import { HomePage  } from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import { SignPage } from './pages/sign/sign.component';
+import Header from './components/header/header.component'
 
 class App extends React.Component {
 
@@ -51,7 +51,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header currentUser={this.state.currentUser} />
+        <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/shop' element={<ShopPage/>} />
